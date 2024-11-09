@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSquad 🎅</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,62 +40,6 @@
         </div>
     </div>
 
-<!-- Cookie Modal -->
-<div id="cookieModal" class="cookie-modal">
-    <div class="cookie-modal-content">
-        <div class="cookie-icon">
-            <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsM0M3LjAzLDMsMyw3LjAzLDMsMTJjMCw0Ljk3LDQuMDMsOSw5LDlzOS00LjAzLDktOUMyMSw3LjAzLDE2Ljk3LDMsMTIsM3ogTTEyLDE5Yy0zLjg2LDAtNy0zLjE0LTctNyBjMC0zLjg2LDMuMTQtNyw3LTdzNywzLjE0LDcsN0MxOSwxNS44NiwxNS44NiwxOSwxMiwxOXogTTE2LDExaC0zVjhjMC0wLjU1LTAuNDUtMS0xLTFzLTEsMC40NS0xLDF2M0g4Yy0wLjU1LDAtMSwwLjQ1LTEsMSBzMC40NSwxLDEsMWgzdjNjMCwwLjU1LDAuNDUsMSwxLDFzMS0wLjQ1LDEtMXYtM2gzYzAuNTUsMCwxLTAuNDUsMS0xUzE2LjU1LDExLDE2LDExeiIgLz4KICAgICAgICAgICAgICAgIDwvc3ZnPg==" alt="Cookie Icon">
-        </div>
-
-        <div class="cookie-header">
-            <h3>🍪 Cookies & Privacidade</h3>
-        </div>
-
-        <div class="cookie-body">
-            <p>Utilizamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você interage com nosso conteúdo e nos permitem oferecer funcionalidades nas redes sociais.</p>
-        </div>
-
-        <div class="cookie-preferences">
-            <div class="cookie-preference-item">
-                <label class="switch">
-                    <input type="checkbox" checked disabled>
-                    <span class="slider"></span>
-                </label>
-                <div class="preference-text">
-                    <strong>Essenciais</strong>
-                    <p>Necessários para o funcionamento do site</p>
-                </div>
-            </div>
-
-            <div class="cookie-preference-item">
-                <label class="switch">
-                    <input type="checkbox" id="analyticsConsent">
-                    <span class="slider"></span>
-                </label>
-                <div class="preference-text">
-                    <strong>Analytics</strong>
-                    <p>Nos ajudam a entender como você usa o site</p>
-                </div>
-            </div>
-
-            <div class="cookie-preference-item">
-                <label class="switch">
-                    <input type="checkbox" id="marketingConsent">
-                    <span class="slider"></span>
-                </label>
-                <div class="preference-text">
-                    <strong>Marketing</strong>
-                    <p>Permitem oferecermos conteúdo personalizado</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="cookie-actions">
-            <button id="acceptSelected" class="cookie-button secondary">Aceitar Selecionados</button>
-            <button id="acceptAll" class="cookie-button primary">Aceitar Todos</button>
-        </div>
-    </div>
-</div>
 
     <!-- Header -->
     <header class="header">
@@ -269,46 +214,47 @@
 </section>
 
 
-    <!-- Contact Section -->
-    <section id="contato" class="contact">
-        <div class="section-header">
-            <h2>Contato</h2>
-            <p>Vamos começar seu projeto?</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Localização</h3>
-                    <p></p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <h3>Telefone</h3>
-                    <p></p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email</h3>
-                    <p></p>
-                </div>
+<!-- Contact Section -->
+<section id="contato" class="contact">
+    <div class="section-header">
+        <h2>Contato</h2>
+        <p>Vamos começar seu projeto?</p>
+    </div>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Localização</h3>
+                <p></p>
             </div>
-            <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Nome" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Mensagem" required></textarea>
-                </div>
-                <button type="submit" class="primary-button">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </button>
-            </form>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <h3>Telefone</h3>
+                <p>(55) 45-999836549</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p></p>
+            </div>
         </div>
-    </section>
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder="Mensagem" required></textarea>
+            </div>
+            <button type="submit" class="primary-button">
+                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+        </form>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">

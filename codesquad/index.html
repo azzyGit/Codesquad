@@ -1,0 +1,350 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev - Desenvolvimento de Sites</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="loading-screen">
+        <div class="code-universe">
+            <div class="floating-elements">
+                <div class="code-particle html">&lt;/&gt;</div>
+                <div class="code-particle css">{}</div>
+                <div class="code-particle js">()</div>
+                <div class="code-particle react">><</div>
+            </div>
+            <div class="center-sphere">
+                <div class="sphere-3d">
+                    <div class="core"></div>
+                    <div class="wireframe"></div>
+                    <div class="scanning-line"></div>
+                </div>
+                <div class="loading-status">
+                    <div class="binary-text"></div>
+                    <div class="status-message">Entrando Na CodeSquad</div>
+                    <div class="loading-progress">
+                        <div class="progress-segments">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="matrix-rain"></div>
+        </div>
+    </div>
+
+<!-- Cookie Modal -->
+<div id="cookieModal" class="cookie-modal">
+    <div class="cookie-modal-content">
+        <div class="cookie-icon">
+            <img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Ym94PSIwIDAgMjQgMjQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iY3VycmVudENvbG9yIiBkPSJNMTIsM0M3LjAzLDMsMyw3LjAzLDMsMTJjMCw0Ljk3LDQuMDMsOSw5LDlzOS00LjAzLDktOUMyMSw3LjAzLDE2Ljk3LDMsMTIsM3ogTTEyLDE5Yy0zLjg2LDAtNy0zLjE0LTctNyBjMC0zLjg2LDMuMTQtNyw3LTdzNywzLjE0LDcsN0MxOSwxNS44NiwxNS44NiwxOSwxMiwxOXogTTE2LDExaC0zVjhjMC0wLjU1LTAuNDUtMS0xLTFzLTEsMC40NS0xLDF2M0g4Yy0wLjU1LDAtMSwwLjQ1LTEsMSBzMC40NSwxLDEsMWgzdjNjMCwwLjU1LDAuNDUsMSwxLDFzMS0wLjQ1LDEtMXYtM2gzYzAuNTUsMCwxLTAuNDUsMS0xUzE2LjU1LDExLDE2LDExeiIgLz4KICAgICAgICAgICAgICAgIDwvc3ZnPg==" alt="Cookie Icon">
+        </div>
+
+        <div class="cookie-header">
+            <h3>🍪 Cookies & Privacidade</h3>
+        </div>
+
+        <div class="cookie-body">
+            <p>Utilizamos cookies para melhorar sua experiência em nosso site. Eles nos ajudam a entender como você interage com nosso conteúdo e nos permitem oferecer funcionalidades nas redes sociais.</p>
+        </div>
+
+        <div class="cookie-preferences">
+            <div class="cookie-preference-item">
+                <label class="switch">
+                    <input type="checkbox" checked disabled>
+                    <span class="slider"></span>
+                </label>
+                <div class="preference-text">
+                    <strong>Essenciais</strong>
+                    <p>Necessários para o funcionamento do site</p>
+                </div>
+            </div>
+
+            <div class="cookie-preference-item">
+                <label class="switch">
+                    <input type="checkbox" id="analyticsConsent">
+                    <span class="slider"></span>
+                </label>
+                <div class="preference-text">
+                    <strong>Analytics</strong>
+                    <p>Nos ajudam a entender como você usa o site</p>
+                </div>
+            </div>
+
+            <div class="cookie-preference-item">
+                <label class="switch">
+                    <input type="checkbox" id="marketingConsent">
+                    <span class="slider"></span>
+                </label>
+                <div class="preference-text">
+                    <strong>Marketing</strong>
+                    <p>Permitem oferecermos conteúdo personalizado</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-actions">
+            <button id="acceptSelected" class="cookie-button secondary">Aceitar Selecionados</button>
+            <button id="acceptAll" class="cookie-button primary">Aceitar Todos</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">CodeSquad</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato" class="cta-button">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 id="hero-title" class="animate-on-scroll typing"><span id="dynamic-text"></span><span class="cursor"></span></h1>
+    <p id="hero-subtitle" class="animate-on-scroll typing"></p>
+            <div class="hero-buttons">
+                <a href="#contato" class="primary-button animate-on-scroll">Começar Projeto</a>
+                <a href="#portfolio" class="secondary-button animate-on-scroll">Ver Trabalhos</a>
+            </div>
+        </div>
+        <div class="hero-image animate-on-scroll">
+            <img src="img\imagem2.png" alt="Hero Image">
+        </div>
+    </section>
+    
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+        <div class="section-header">
+            <h2>Nossos Serviços</h2>
+            <p>Soluções completas para sua presença digital</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Sites Institucionais</h3>
+                <p>Desenvolvimento de sites profissionais e modernos que representam sua marca com excelência.</p>
+            </div>
+        
+            <div class="service-card animate-on-scroll">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Sites Responsivos</h3>
+                <p>Design adaptável para todos os dispositivos, garantindo a melhor experiência para seus usuários.</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <i class="fas fa-chart-line"></i>
+                <h3>Marketing Digital</h3>
+                <p>Estratégias completas para aumentar sua visibilidade e converter mais clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2>Portfólio</h2>
+            <p>Conheça alguns dos nossos projetos</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item animate-on-scroll">
+                <img src="img\focoecima.png" alt="Projeto 1">
+                <div class="portfolio-overlay">
+                    <h3>Site Web</h3>
+                    <p>Conforto Térmico de Excelência</p>
+                    <div class="portfolio-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll">
+                <img src="img/imagem4.png" alt="Projeto 2">
+                <div class="portfolio-overlay">
+                    <h3>Site Web</h3>
+                    <p>Tecnológico com CMS personalizado</p>
+                    <div class="portfolio-tags">
+                        <span>WordPress</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item animate-on-scroll">
+                <img src="img/imagem3.png" alt="Projeto 3">
+                <div class="portfolio-overlay">
+                    <h3>Web Page</h3>
+                    <p>Serviços Web</p>
+                    <div class="portfolio-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+<section id="depoimentos" class="testimonials">
+    <div class="section-header">
+        <h2>Depoimentos</h2>
+        <p>O que nossos clientes dizem</p>
+    </div>
+    <div class="testimonials-slider">
+        <!-- Depoimento 1 -->
+        <div class="testimonial-card active">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>"Excelente trabalho! O site superou todas as expectativas e nossos clientes adoraram."</p>
+            <div class="testimonial-author">
+                <img src="img/cliente1.jpg" alt="Maria Silva">
+                <div>
+                    <h4>Maria Silva</h4>
+                    <span>Ceo PBO Inventarios</span>
+                </div>
+            </div>
+        </div>
+        <!-- Depoimento 2 -->
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>"Serviço impecável, comunicação clara e resultado excelente. Recomendo para todos!"</p>
+            <div class="testimonial-author">
+                <img src="img/cliente2.jpg" alt="João Pereira">
+                <div>
+                    <h4>João Pereira</h4>
+                    <span>Ceo JJ Hair</span>
+                </div>
+            </div>
+        </div>
+        <!-- Depoimento 3 -->
+        <div class="testimonial-card">
+            <div class="testimonial-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>"Equipe profissional e criativa. Consegui um site moderno e intuitivo, perfeito para minha empresa."</p>
+            <div class="testimonial-author">
+                <img src="img/cliente3.jpg" alt="Ana Souza">
+                <div>
+                    <h4>Paulo Jorlan</h4>
+                    <span>Socio Invesidor BBW Multimarcas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-navigation">
+        
+    </div>
+    <div class="testimonial-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="section-header">
+            <h2>Contato</h2>
+            <p>Vamos começar seu projeto?</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localização</h3>
+                    <p></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefone</h3>
+                    <p></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p></p>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Mensagem" required></textarea>
+                </div>
+                <button type="submit" class="primary-button">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CodeSquad</h3>
+                <p>Transformando ideias em realidade digital.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu email">
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CodeSquad - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

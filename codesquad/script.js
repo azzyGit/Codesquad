@@ -351,3 +351,81 @@ window.addEventListener('scroll', () => {
     // Mostrar o modal quando a página carregar
     showCookieModal();
 });
+
+function toggleChat() {
+            const chat = document.getElementById('whatsappChat');
+            chat.classList.toggle('active');
+            // Remove o badge de notificação quando o chat é aberto
+            document.querySelector('.notification-badge').style.display = 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                const chatBody = document.getElementById('chatBody');
+                const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                // Adiciona mensagem do usuário
+                chatBody.innerHTML += `
+                    <div class="message sent">
+                        <div class="message-content">
+                            ${message}
+                        </div>
+                        <div class="message-time">${time}</div>
+                    </div>
+                `;
+
+                input.value = '';
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                // Simula resposta automática após 1 segundo
+                setTimeout(() => {
+                    chatBody.innerHTML += `
+                        <div class="message received">
+                            <div class="message-content">
+                                Obrigado pela sua mensagem! Em breve um de nossos atendentes entrará em contato. 🙂
+                            </div>
+                            <div class="message-time">${time}</div>
+                        </div>
+                    `;
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+
+                // Redireciona para o WhatsApp após 2 segundos
+                setTimeout(() => {
+                    const phone = '5511999999999'; // Substitua pelo seu número
+                    const text = encodeURIComponent(message);
+                    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
+                }, 2000);
+            }
+        }
+
+        // Permite enviar mensagem com Enter
+        document.getElementById('whatsapp-button').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para atualizar o horário
+            function updateTime() {
+                const timeDisplay = document.getElementById('timeDisplay');
+                if (timeDisplay) {  // Verifica se o elemento existe
+                    const now = new Date();
+                    const timeString = now.toLocaleTimeString('pt-BR', {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    });
+                    timeDisplay.textContent = timeString;
+                }
+            }
+        
+            // Atualiza imediatamente
+            updateTime();
+        
+            // Atualiza a cada minuto
+            setInterval(updateTime, 60000);
+        });

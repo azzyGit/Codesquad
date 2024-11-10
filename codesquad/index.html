@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeSquad 🎅</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -230,7 +231,7 @@
             <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <h3>Telefone</h3>
-                <p>(55) 45-999836549</p>
+                <p>(55) 45 99836549</p>
             </div>
             <div class="info-item">
                 <i class="fas fa-envelope"></i>
@@ -292,5 +293,59 @@
     </footer>
 
     <script src="script.js"></script>
+
+  
+     <!-- WhatsApp Button & Chat -->
+     <div class="whatsapp-button">
+        <div class="button" onclick="toggleChat()">
+            <span class="notification-badge"></span>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjEgMTEuNWE4LjM4IDguMzggMCAwIDEtLjkgMy44IDguNSA4LjUgMCAwIDEtNy42IDQuNyA4LjM4IDguMzggMCAwIDEtMy44LS45TDMgMjFsMS45LTUuN2E4LjM4IDguMzggMCAwIDEtLjktMy44IDguNSA4LjUgMCAwIDEgNC43LTcuNiA4LjM4IDguMzggMCAwIDEgMy44LS45aC41YTguNDggOC40OCAwIDAgMSA4IDh2LjV6Ii8+PC9zdmc+" alt="WhatsApp">
+        </div>
+
+        <div class="whatsapp-chat" id="whatsappChat">
+            <div class="chat-header">
+                <img src="img/atendente.jpg" alt="Profile">
+                <div class="header-info">
+                    <h4>CodeSquad Atendimento</h4>
+                    <p>Normalmente responde em 5 minutos</p>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <div class="message received">
+                    <div class="message-content">
+                        Olá! Como posso ajudar você hoje? 😊
+                    </div>
+                    <div class="message-time sent"><span> </span><span id="timeDisplay">00:00</span><span> </span></div>
+
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="messageInput" placeholder="Digite sua mensagem...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const timeDisplay = document.getElementById('timeDisplay');
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('pt-BR', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            });
+            timeDisplay.textContent = timeString;
+        }
+
+        // Update time immediately
+        updateTime();
+
+        // Update time every minute
+        setInterval(updateTime, 60000);
+    </script>
+
 </body>
 </html>

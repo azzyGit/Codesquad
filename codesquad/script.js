@@ -1,5 +1,74 @@
 // script.js
 
+
+document.getElementById('contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Captura os valores dos campos do formulário
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Validação básica
+    if (!name || !email || !message) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    // Dados a serem enviados para o webhook
+    const webhookData = {
+        content: null,
+        embeds: [{
+            title: "Novo Contato Recebido",
+            color: 3447003,
+            fields: [
+                {
+                    name: "Nome",
+                    value: name,
+                    inline: false
+                },
+                {
+                    name: "Email",
+                    value: email,
+                    inline: false
+                },
+                {
+                    name: "Mensagem",
+                    value: message,
+                    inline: false
+                }
+            ],
+            footer: {
+                text: "Formulário de Contato",
+                icon_url: "https://i.imgur.com/AfFp7pu.png"
+            },
+            timestamp: new Date().toISOString()
+        }]
+    };
+
+    try {
+        // Envia o formulário para o webhook do Discord
+        const response = await fetch('https://discord.com/api/webhooks/1304915154517102622/3PYRAkDmM3CHkzzijnTXjcm-DPAtri-N0inXN39g8ZqImE3wyVyIYieJcEB4Lty2_xqp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookData)
+        });
+
+        // Verificação do status da resposta
+        if (response.ok) {
+            alert("Mensagem enviada com sucesso!");
+            document.getElementById('contact-form').reset();
+        } else {
+            alert("Erro ao enviar a mensagem. Tente novamente.");
+        }
+    } catch (error) {
+        console.error("Erro na solicitação:", error);
+        alert("Erro ao enviar a mensagem. Verifique a conexão e tente novamente.");
+    }
+});
+
 // Menu Mobile Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -118,6 +187,7 @@ function typeWriter(element, texts, speed = 300, pause = 2000) {
 // Iniciar animação de digitação no carregamento da página
 window.addEventListener('load', () => {
     const dynamicElement = document.getElementById('dynamic-text');
+    dynamicElement.style.minWidth = '250px'; // Baseado no maior texto esperado
     const subtitleElement = document.getElementById('hero-subtitle');
 
     const titleTexts = [
@@ -248,20 +318,7 @@ window.addEventListener('scroll', () => {
         heroImage.style.transform = `translateY(${scroll * 0.4}px)`;
     }
 
-    // Cookie Modal Implementation
-document.addEventListener('DOMContentLoaded', function() {
-    const cookieModal = document.querySelector('.cookie-modal');
-    
-    // Função para mostrar o modal
-    function showCookieModal() {
-        // Verifica se já tem consentimento salvo
-        if (!localStorage.getItem('cookieConsent')) {
-            // Adiciona a classe active após um pequeno delay
-            setTimeout(() => {
-                cookieModal.classList.add('active');
-            }, 1000);
-        }
-    }
+   
 
     // Função para salvar as preferências
     function savePreferences(all = false) {
@@ -293,5 +350,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mostrar o modal quando a página carregar
     showCookieModal();
-});
 });

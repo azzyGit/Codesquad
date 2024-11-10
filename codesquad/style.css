@@ -478,13 +478,18 @@ body {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: var(--text-color);
+    min-height: 8.4rem; /* Altura para ~2 linhas de texto */
+    display: flex;
+    align-items: flex-start;
 }
 
 .hero p {
     font-size: 1.2rem;
     color: var(--light-text);
     margin-bottom: 2rem;
+    min-height: 3.6rem; /* Altura para ~2 linhas de texto */
 }
+
 
 .hero-buttons {
     display: flex;
@@ -495,6 +500,32 @@ body {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        min-height: 6rem; /* Altura ajustada para fonte menor */
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        min-height: 3.3rem; /* Altura ajustada para fonte menor */
+    }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+        min-height: 4.8rem; /* Altura ajustada para fonte ainda menor */
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        min-height: 3rem; /* Altura ajustada para fonte ainda menor */
+    }
 }
 
 /* Buttons */

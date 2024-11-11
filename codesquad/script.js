@@ -398,36 +398,51 @@ function toggleChat() {
                     const phone = '554599836549'; // Substitua pelo seu número
                     const text = encodeURIComponent(message);
                     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
-                }, 2000);
+                }, 0.1);
             }
         }
-
-        // Permite enviar mensagem com Enter
-        document.getElementById('whatsapp-button').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
+// Animações de entrada e flutuação para a seção "Por que nos escolher"
+window.addEventListener('load', () => {
+    const whyItems = document.querySelectorAll('.why-item');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
             }
         });
-        document.addEventListener('DOMContentLoaded', function() {
-            // Função para atualizar o horário
-            function updateTime() {
-                const timeDisplay = document.getElementById('timeDisplay');
-                if (timeDisplay) {  // Verifica se o elemento existe
-                    const now = new Date();
-                    const timeString = now.toLocaleTimeString('pt-BR', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        hour12: false
-                    });
-                    timeDisplay.textContent = timeString;
-                }
-            }
-        
-            // Atualiza imediatamente
-            updateTime();
-        
-            // Atualiza a cada minuto
-            setInterval(updateTime, 60000);
-        });
+    }, { threshold: 0.5 });
 
-      
+    whyItems.forEach(item => {
+        item.classList.add('animate-on-scroll');
+        observer.observe(item);
+    });
+});
+
+// Animações personalizadas de fade-in
+document.querySelectorAll('.animate-on-scroll').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+});
+
+window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Evento de clique para redirecionar para o WhatsApp
+document.getElementById('whatsappButton').addEventListener('click', () => {
+    setTimeout(() => {
+        const phone = '554599836549'; // Substitua pelo seu número de telefone
+        const message = encodeURIComponent('Olá, gostaria de fazer um orçamento personalizado!');
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+        
+        window.open(whatsappUrl, '_blank');
+    }, 0.1); // Redireciona após 2 segundos
+});

@@ -12,6 +12,9 @@
 </head>
 <body>
 
+
+    
+    
     <div class="loading-screen">
         <div class="code-universe">
             <div class="floating-elements">
@@ -56,6 +59,12 @@
                 <li><a href="#depoimentos">Depoimentos</a></li>
                 <li><a href="#contato" class="cta-button">Contato</a></li>
             </ul>
+            <label class="ui-switch">
+                <input type="checkbox">
+                <div class="slider">
+                  <div class="circle"></div>
+                </div>
+              </label>
         </nav>
     </header>
 
@@ -65,8 +74,17 @@
             <h1 id="hero-title" class="animate-on-scroll typing"><span id="dynamic-text"></span><span class="cursor"></span></h1>
     <p id="hero-subtitle" class="animate-on-scroll typing"></p>
             <div class="hero-buttons">
-                <a href="#contato" class="primary-button animate-on-scroll">Começar Projeto</a>
-                <a href="#portfolio" class="secondary-button animate-on-scroll">Ver Trabalhos</a>
+                <button id="whatsappButton" class="custom-button">
+    Começar Projeto
+    <svg class="custom-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path
+            fill-rule="evenodd"
+            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+            clip-rule="evenodd"
+        ></path>
+    </svg>
+</button>
+                <a href="#portfolio" class="custom-button">Ver Trabalhos</a>
             </div>
         </div>
         <div class="hero-image animate-on-scroll">
@@ -109,7 +127,7 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-item animate-on-scroll">
-                <img src="img\focoecima.png" alt="Projeto 1">
+                <img src="img/site1.png" alt="Projeto 1">
                 <div class="portfolio-overlay">
                     <h3>Site Web</h3>
                     <p>Conforto Térmico de Excelência</p>
@@ -147,6 +165,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Testimonials Section -->
 <section id="depoimentos" class="testimonials">
@@ -214,6 +234,54 @@
     </div>
 </section>
 
+<section id="por-que-nos" class="why-choose-us animate-on-scroll">
+    <div class="section-header">
+        <h2>Por Que Escolher a CodeSquad?</h2>
+        <p>Veja os motivos pelos quais somos a escolha certa para o seu projeto digital</p>
+    </div>
+    <div class="why-container">
+        <div class="why-item">
+            <div class="why-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="why-text">
+                <h3>Alta Performance</h3>
+                <p>Sites rápidos e otimizados, focados em proporcionar a melhor experiência.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <div class="why-text">
+                <h3>Inovação Constante</h3>
+                <p>Utilizamos as mais recentes tecnologias para soluções inovadoras e eficientes.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="why-text">
+                <h3>Segurança Garantida</h3>
+                <p>Priorizamos a proteção de dados, garantindo um ambiente seguro para seu negócio.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">
+                <i class="fas fa-smile"></i>
+            </div>
+            <div class="why-text">
+                <h3>Atendimento Excepcional</h3>
+                <p>Nossa equipe está pronta para oferecer suporte personalizado e dedicado.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  
+
 
 <!-- Contact Section -->
 <section id="contato" class="contact">
@@ -223,11 +291,7 @@
     </div>
     <div class="contact-container">
         <div class="contact-info">
-            <div class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Localização</h3>
-                <p></p>
-            </div>
+            
             <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <h3>Telefone</h3>
@@ -236,7 +300,7 @@
             <div class="info-item">
                 <i class="fas fa-envelope"></i>
                 <h3>Email</h3>
-                <p></p>
+                <p>azzyorg@gmail.com</p>
             </div>
         </div>
         <form id="contact-form" class="contact-form">
@@ -280,12 +344,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Newsletter</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Seu email">
-                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                </form>
-            </div>
+                
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 CodeSquad - Todos os direitos reservados</p>
@@ -328,6 +387,12 @@
         </div>
     </div>
 
+
+    
+
+    <!-- Menu de Contexto -->
+
+
     <script>
         function updateTime() {
             const timeDisplay = document.getElementById('timeDisplay');
@@ -345,6 +410,30 @@
 
         // Update time every minute
         setInterval(updateTime, 60000);
+
+
+        const customMenu = document.getElementById('custom-context-menu');
+
+
+        // Alternância do Modo Escuro
+const toggleSwitch = document.getElementById('darkModeToggle input');
+
+toggleSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
+    // Salva a preferência do usuário no localStorage
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
+
+// Verifica se o usuário já ativou o modo escuro antes
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    toggleSwitch.checked = true;
+}
+
     </script>
 
 </body>

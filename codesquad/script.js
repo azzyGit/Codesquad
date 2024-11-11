@@ -430,26 +430,4 @@ function toggleChat() {
             setInterval(updateTime, 60000);
         });
 
-        function startProject() {
-            // Mostrar vídeo em tela cheia
-            const video = document.getElementById('videoFullScreen');
-            video.style.display = 'block';
-        
-            // Reproduzir vídeo
-            video.play();
-        
-            // Reproduzir som
-            const audio = document.getElementById('audio');
-            audio.play();
-        
-            // Colocar vídeo em tela cheia
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.mozRequestFullScreen) { // Firefox
-                video.mozRequestFullScreen();
-            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { // IE/Edge
-                video.msRequestFullscreen();
-            }
-        }
+      

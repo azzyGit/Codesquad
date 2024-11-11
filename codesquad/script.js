@@ -395,7 +395,7 @@ function toggleChat() {
 
                 // Redireciona para o WhatsApp após 2 segundos
                 setTimeout(() => {
-                    const phone = '5511999999999'; // Substitua pelo seu número
+                    const phone = '554599836549'; // Substitua pelo seu número
                     const text = encodeURIComponent(message);
                     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank');
                 }, 2000);
